@@ -5,6 +5,7 @@ object ScalaTour {
     val message = "Hello world"
     println(message)
     fizzBuzz(100)
+    fizzBuzzForMatch(100)
   }
 
   def fizzBuzz(n :Int): Unit = for (i <-  1 to n) {
@@ -16,6 +17,19 @@ object ScalaTour {
       println("Buzz")
     } else {
       println(i)
+    }
+  }
+
+  def fizzBuzzForMatch(n: Int): Unit = for (i <- 1 to n) {
+    i match {
+      case x if x % 15 == 0 =>
+        println("FizzBuzz")
+      case x if x % 3 == 0 =>
+        println("Fizz")
+      case x if x % 5 == 0 =>
+        println("Buzz")
+      case x =>
+        println(x)
     }
   }
 }
